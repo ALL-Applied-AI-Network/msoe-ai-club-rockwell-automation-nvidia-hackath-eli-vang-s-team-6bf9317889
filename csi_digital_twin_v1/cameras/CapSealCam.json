@@ -1,0 +1,44 @@
+{
+ "camera": "CapSealCam",
+ "station_file": "stations/tray_inspection/tray_inspection.usdc",
+ "prim_in_station_file": "/TrayInspection/CapSealCam/CapSealCam",
+ "prim_in_csi_line": "/CSI_Line/TrayInspection/CapSealCam/CapSealCam",
+ "final_image_px": [
+  640,
+  480
+ ],
+ "render_px": [
+  768,
+  576
+ ],
+ "overscan": 1.2,
+ "focal_px_final": 652.91,
+ "principal_point_final_px": [
+  320.0,
+  240.0
+ ],
+ "lens_k1": -0.1527001634003988,
+ "position_m": [
+  -0.31560608679145324,
+  -0.7199843799447264,
+  2.3733781471313415
+ ],
+ "R_world_to_cv": [
+  [
+   -0.9968481267536146,
+   0.03243361313147361,
+   0.07240077987872459
+  ],
+  [
+   0.036821661764427,
+   0.9975118152910967,
+   0.06011941100482432
+  ],
+  [
+   -0.07027074364709515,
+   0.0625958392698649,
+   -0.9955620440200528
+  ]
+ ],
+ "conventions": "world = csi_line / station coordinates (meters, Z up); R_world_to_cv: OpenCV camera (+X right, +Y down, +Z forward). Render render_px with the USD camera (pinhole), then tools/apply_lens.py adds the lens distortion (k1) and crops to final_image_px."
+}

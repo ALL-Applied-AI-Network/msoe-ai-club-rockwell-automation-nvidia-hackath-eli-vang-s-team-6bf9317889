@@ -1,0 +1,94 @@
+{
+ "camera": "FillCam",
+ "station_file": "stations/fill_station/fill_station.usda",
+ "prim_in_station_file": "/FillStation/FillStation_LocalRoot/FillCam/FillCam",
+ "prim_in_csi_line": "/CSI_Line/FillStation/FillStation_LocalRoot/FillCam/FillCam",
+ "final_image_px": [
+  640,
+  480
+ ],
+ "render_px": [
+  640,
+  480
+ ],
+ "overscan": 1.0,
+ "intrinsics_K_px": [
+  [
+   728.7676839523441,
+   0,
+   320.0
+  ],
+  [
+   0,
+   728.7676839523441,
+   240.0
+  ],
+  [
+   0,
+   0,
+   1
+  ]
+ ],
+ "lens_k1": 0.0,
+ "focal_length_mm": 40.993183851242065,
+ "horizontal_aperture_mm": 36.000001430511475,
+ "vertical_aperture_mm": 27.000001072883606,
+ "camera_to_world_in_station_file": [
+  [
+   0.1711176749943712,
+   0.5613216156591883,
+   -0.8097141285498903,
+   4.938855458564632
+  ],
+  [
+   -0.9852415969440802,
+   0.10102031723522989,
+   -0.13818131578401316,
+   -2.0360563206718894
+  ],
+  [
+   0.004233418314836246,
+   0.8214092306362771,
+   0.570323714104472,
+   1.2983193888480855
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "camera_to_world_in_csi_line": [
+  [
+   -0.9852416302619232,
+   0.10102020794187097,
+   -0.13818115812684406,
+   1.4310438148043372
+  ],
+  [
+   -0.17111748316074057,
+   -0.5613216353285712,
+   0.8097141554547871,
+   -0.590375314357594
+  ],
+  [
+   0.004233418314836246,
+   0.8214092306362771,
+   0.570323714104472,
+   1.1645799770171834
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "animation_frames": [
+  1,
+  686
+ ],
+ "fps": 30,
+ "conventions": "USD camera axes (+X right, +Y up, -Z forward); matrices are 4x4, column vectors, meters. Pinhole, no distortion: render final_image_px directly."
+}
