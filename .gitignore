@@ -3,3 +3,5 @@
 previews/
 dataset*/
 __pycache__/
+csi_digital_twin_v1/csi_line.usda
+csi_digital_twin_v1/stations/
