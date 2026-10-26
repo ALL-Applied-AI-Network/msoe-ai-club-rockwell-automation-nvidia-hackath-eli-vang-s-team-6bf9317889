@@ -1,7 +1,7 @@
 """Generate labeled synthetic images of the good fixture (G01-G30) from the CapSealCam view.
 
-    <isaac-sim>/python.sh tools/generate_dataset.py --count 20 --out /workspace/dataset_test --subframes 8
-    <isaac-sim>/python.sh tools/generate_dataset.py --count 300 --out /workspace/dataset
+    <isaac-sim>/python.sh tools/generate_data.py --count 20 --out /workspace/dataset_test --subframes 8
+    <isaac-sim>/python.sh tools/generate_data.py --count 300 --out /workspace/dataset
 
 For every image, each of the 30 positions is randomly set to one of: pass, missing_cap, crooked_cap, no_vial.
 (damaged_vial and the scrap fixture are not generated yet.) Output folder:
@@ -26,8 +26,9 @@ ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--subframes", type=int, default=32, help="path-tracing quality; use 8 for a quick test")
 ap.add_argument("--defect-rate", type=float, default=0.4,
                 help="fraction of positions that get a defect, split equally between the 3 defect classes")
-ap.add_argument("--crop", type=int, default=64, help="crop size in pixels of the final 640x480 image")
-ap.add_argument("--stage", default=os.path.join(HERE, "stations", "tray_inspection", "tray_inspection.usdc"))
+ap.add_argument("--crop", type=int, default=40, help="crop size in pixels of the final 640x480 image")
+ap.add_argument("--stage", default=os.path.join(HERE, "csi_line.usda"),
+                help="csi_line.usda (full plant, matches the real camera view) or a single station file")
 ap.add_argument("--kit-arg", action="append", default=[], help="extra Isaac Sim / Kit argument (repeatable)")
 a = ap.parse_args()
 if not 0 <= a.defect_rate <= 1:
@@ -63,9 +64,11 @@ try:
     for _ in range(10):
         kit.update()
     stage = ctx.get_stage()
-    prim = cam["prim_in_station_file"]
-    if not stage.GetPrimAtPath(prim).IsValid():
-        raise RuntimeError(f"camera not found: {prim}")
+    prim = next((p for p in [cam["prim_in_csi_line"], cam["prim_in_station_file"]]
+                 if stage.GetPrimAtPath(p).IsValid()), None)
+    if prim is None:
+        raise RuntimeError(f"camera CapSealCam not found in {a.stage}")
+    root = prim.rsplit("/", 2)[0]   # /CSI_Line/TrayInspection or /TrayInspection
 
     rp = rep.create.render_product(prim, (rw, rh))
     ann = rep.AnnotatorRegistry.get_annotator("rgb"); ann.attach([rp])
@@ -88,7 +91,7 @@ try:
     mapx = (und[..., 0] * f + rw / 2).astype(np.float32)
     mapy = (und[..., 1] * f + rh / 2).astype(np.float32)
 
-    da = td.DefectApplier(stage)
+    da = td.DefectApplier(stage, root=root)
     centers = da.pixel_centers(cam)
     rng = random.Random(a.seed)
     per_defect = a.defect_rate / 3
@@ -122,7 +125,9 @@ try:
             rows.append([f"images/{name}.png", pos, cls, round(float(cx), 1), round(float(cy), 1), str(crop_file)])
             if cls != "pass":
                 cv2.rectangle(note, (x0, y0), (x0 + a.crop, y0 + a.crop), colors[cls], 1)
-                cv2.putText(note, f"{pos} {cls}", (x0, max(y0 - 3, 10)), cv2.FONT_HERSHEY_SIMPLEX, 0.35, colors[cls], 1)
+                cv2.putText(note, pos, (x0, max(y0 - 2, 8)), cv2.FONT_HERSHEY_SIMPLEX, 0.3, colors[cls], 1)
+        for k, (cname, col) in enumerate(c for c in colors.items() if c[0] != "pass"):
+            cv2.putText(note, cname, (6, 14 + 14 * k), cv2.FONT_HERSHEY_SIMPLEX, 0.45, col, 1)
         cv2.imwrite(str(out / "annotated" / f"{name}.png"), note)
         n_def = sum(c != "pass" for c in labels.values())
         print(f"[{i + 1}/{a.count}] {name}: {n_def} defects, {time.time() - t0:.0f}s elapsed", flush=True)

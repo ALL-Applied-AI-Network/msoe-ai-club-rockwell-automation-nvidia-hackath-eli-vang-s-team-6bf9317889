@@ -2,3 +2,4 @@
 *.exr
 previews/
 dataset*/
+__pycache__/
