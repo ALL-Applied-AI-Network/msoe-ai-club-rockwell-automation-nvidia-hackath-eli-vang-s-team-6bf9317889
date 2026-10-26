@@ -1,0 +1,1579 @@
+{
+  "schema_version": "participant-1.0",
+  "filename": "tray_000001.jpg",
+  "source_path": "images/tray_000001.jpg",
+  "source_sha256": "df0edcffe19d5152c18d50ede9aacdbaa5357e3dc14b9717072951a6522e6b19",
+  "image_size": [
+    1920,
+    1080
+  ],
+  "model_hash": "5da15933d716249e411e6873ffdd955a2815428dd91955a3f63a554ddc331e37",
+  "backend": "manual_annotation",
+  "annotation_status": "draft",
+  "alignment": {
+    "profile": "view_001",
+    "offset": [
+      0,
+      0
+    ],
+    "residual": 0.0,
+    "accepted": true,
+    "geometry_requires_visual_check": true
+  },
+  "context": {},
+  "slots": [
+    {
+      "id": "G01",
+      "area": "good",
+      "position": 1,
+      "row": 1,
+      "column_from_right": 1,
+      "center": [
+        1078.0,
+        406.0
+      ],
+      "bbox": [
+        1040,
+        359,
+        1120,
+        449
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G01.jpg"
+    },
+    {
+      "id": "G02",
+      "area": "good",
+      "position": 2,
+      "row": 2,
+      "column_from_right": 1,
+      "center": [
+        1075.25,
+        483.25
+      ],
+      "bbox": [
+        1037,
+        436,
+        1117,
+        526
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G02.jpg"
+    },
+    {
+      "id": "G03",
+      "area": "good",
+      "position": 3,
+      "row": 3,
+      "column_from_right": 1,
+      "center": [
+        1072.5,
+        560.5
+      ],
+      "bbox": [
+        1034,
+        514,
+        1114,
+        604
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G03.jpg"
+    },
+    {
+      "id": "G04",
+      "area": "good",
+      "position": 4,
+      "row": 4,
+      "column_from_right": 1,
+      "center": [
+        1069.75,
+        637.75
+      ],
+      "bbox": [
+        1032,
+        591,
+        1112,
+        681
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G04.jpg"
+    },
+    {
+      "id": "G05",
+      "area": "good",
+      "position": 5,
+      "row": 5,
+      "column_from_right": 1,
+      "center": [
+        1067.0,
+        715.0
+      ],
+      "bbox": [
+        1029,
+        668,
+        1109,
+        758
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G05.jpg"
+    },
+    {
+      "id": "G06",
+      "area": "good",
+      "position": 6,
+      "row": 1,
+      "column_from_right": 2,
+      "center": [
+        1012.4,
+        404.4
+      ],
+      "bbox": [
+        974,
+        357,
+        1054,
+        447
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G06.jpg"
+    },
+    {
+      "id": "G07",
+      "area": "good",
+      "position": 7,
+      "row": 2,
+      "column_from_right": 2,
+      "center": [
+        1009.9,
+        481.8
+      ],
+      "bbox": [
+        972,
+        435,
+        1052,
+        525
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G07.jpg"
+    },
+    {
+      "id": "G08",
+      "area": "good",
+      "position": 8,
+      "row": 3,
+      "column_from_right": 2,
+      "center": [
+        1007.4,
+        559.2
+      ],
+      "bbox": [
+        969,
+        512,
+        1049,
+        602
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G08.jpg"
+    },
+    {
+      "id": "G09",
+      "area": "good",
+      "position": 9,
+      "row": 4,
+      "column_from_right": 2,
+      "center": [
+        1004.9,
+        636.6
+      ],
+      "bbox": [
+        967,
+        590,
+        1047,
+        680
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G09.jpg"
+    },
+    {
+      "id": "G10",
+      "area": "good",
+      "position": 10,
+      "row": 5,
+      "column_from_right": 2,
+      "center": [
+        1002.4,
+        714.0
+      ],
+      "bbox": [
+        964,
+        667,
+        1044,
+        757
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G10.jpg"
+    },
+    {
+      "id": "G11",
+      "area": "good",
+      "position": 11,
+      "row": 1,
+      "column_from_right": 3,
+      "center": [
+        946.8,
+        402.8
+      ],
+      "bbox": [
+        909,
+        356,
+        989,
+        446
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G11.jpg"
+    },
+    {
+      "id": "G12",
+      "area": "good",
+      "position": 12,
+      "row": 2,
+      "column_from_right": 3,
+      "center": [
+        944.55,
+        480.35
+      ],
+      "bbox": [
+        907,
+        433,
+        987,
+        523
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G12.jpg"
+    },
+    {
+      "id": "G13",
+      "area": "good",
+      "position": 13,
+      "row": 3,
+      "column_from_right": 3,
+      "center": [
+        942.3,
+        557.9
+      ],
+      "bbox": [
+        904,
+        511,
+        984,
+        601
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G13.jpg"
+    },
+    {
+      "id": "G14",
+      "area": "good",
+      "position": 14,
+      "row": 4,
+      "column_from_right": 3,
+      "center": [
+        940.05,
+        635.45
+      ],
+      "bbox": [
+        902,
+        588,
+        982,
+        678
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G14.jpg"
+    },
+    {
+      "id": "G15",
+      "area": "good",
+      "position": 15,
+      "row": 5,
+      "column_from_right": 3,
+      "center": [
+        937.8,
+        713.0
+      ],
+      "bbox": [
+        900,
+        666,
+        980,
+        756
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G15.jpg"
+    },
+    {
+      "id": "G16",
+      "area": "good",
+      "position": 16,
+      "row": 1,
+      "column_from_right": 4,
+      "center": [
+        881.2,
+        401.2
+      ],
+      "bbox": [
+        843,
+        354,
+        923,
+        444
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G16.jpg"
+    },
+    {
+      "id": "G17",
+      "area": "good",
+      "position": 17,
+      "row": 2,
+      "column_from_right": 4,
+      "center": [
+        879.2,
+        478.9
+      ],
+      "bbox": [
+        841,
+        432,
+        921,
+        522
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G17.jpg"
+    },
+    {
+      "id": "G18",
+      "area": "good",
+      "position": 18,
+      "row": 3,
+      "column_from_right": 4,
+      "center": [
+        877.2,
+        556.6
+      ],
+      "bbox": [
+        839,
+        510,
+        919,
+        600
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G18.jpg"
+    },
+    {
+      "id": "G19",
+      "area": "good",
+      "position": 19,
+      "row": 4,
+      "column_from_right": 4,
+      "center": [
+        875.2,
+        634.3
+      ],
+      "bbox": [
+        837,
+        587,
+        917,
+        677
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G19.jpg"
+    },
+    {
+      "id": "G20",
+      "area": "good",
+      "position": 20,
+      "row": 5,
+      "column_from_right": 4,
+      "center": [
+        873.2,
+        712.0
+      ],
+      "bbox": [
+        835,
+        665,
+        915,
+        755
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G20.jpg"
+    },
+    {
+      "id": "G21",
+      "area": "good",
+      "position": 21,
+      "row": 1,
+      "column_from_right": 5,
+      "center": [
+        815.6,
+        399.6
+      ],
+      "bbox": [
+        778,
+        353,
+        858,
+        443
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G21.jpg"
+    },
+    {
+      "id": "G22",
+      "area": "good",
+      "position": 22,
+      "row": 2,
+      "column_from_right": 5,
+      "center": [
+        813.85,
+        477.45
+      ],
+      "bbox": [
+        776,
+        430,
+        856,
+        520
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G22.jpg"
+    },
+    {
+      "id": "G23",
+      "area": "good",
+      "position": 23,
+      "row": 3,
+      "column_from_right": 5,
+      "center": [
+        812.1,
+        555.3
+      ],
+      "bbox": [
+        774,
+        508,
+        854,
+        598
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G23.jpg"
+    },
+    {
+      "id": "G24",
+      "area": "good",
+      "position": 24,
+      "row": 4,
+      "column_from_right": 5,
+      "center": [
+        810.35,
+        633.15
+      ],
+      "bbox": [
+        772,
+        586,
+        852,
+        676
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G24.jpg"
+    },
+    {
+      "id": "G25",
+      "area": "good",
+      "position": 25,
+      "row": 5,
+      "column_from_right": 5,
+      "center": [
+        808.6,
+        711.0
+      ],
+      "bbox": [
+        771,
+        664,
+        851,
+        754
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G25.jpg"
+    },
+    {
+      "id": "G26",
+      "area": "good",
+      "position": 26,
+      "row": 1,
+      "column_from_right": 6,
+      "center": [
+        750.0,
+        398.0
+      ],
+      "bbox": [
+        712,
+        351,
+        792,
+        441
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G26.jpg"
+    },
+    {
+      "id": "G27",
+      "area": "good",
+      "position": 27,
+      "row": 2,
+      "column_from_right": 6,
+      "center": [
+        748.5,
+        476.0
+      ],
+      "bbox": [
+        710,
+        429,
+        790,
+        519
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G27.jpg"
+    },
+    {
+      "id": "G28",
+      "area": "good",
+      "position": 28,
+      "row": 3,
+      "column_from_right": 6,
+      "center": [
+        747.0,
+        554.0
+      ],
+      "bbox": [
+        709,
+        507,
+        789,
+        597
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G28.jpg"
+    },
+    {
+      "id": "G29",
+      "area": "good",
+      "position": 29,
+      "row": 4,
+      "column_from_right": 6,
+      "center": [
+        745.5,
+        632.0
+      ],
+      "bbox": [
+        708,
+        585,
+        788,
+        675
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G29.jpg"
+    },
+    {
+      "id": "G30",
+      "area": "good",
+      "position": 30,
+      "row": 5,
+      "column_from_right": 6,
+      "center": [
+        744.0,
+        710.0
+      ],
+      "bbox": [
+        706,
+        663,
+        786,
+        753
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/G30.jpg"
+    },
+    {
+      "id": "S01",
+      "area": "scrap",
+      "position": 1,
+      "row": 1,
+      "column_from_right": 1,
+      "center": [
+        1480.0,
+        630.0
+      ],
+      "bbox": [
+        1452,
+        596,
+        1623,
+        726
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S01.jpg"
+    },
+    {
+      "id": "S02",
+      "area": "scrap",
+      "position": 2,
+      "row": 2,
+      "column_from_right": 1,
+      "center": [
+        1476.5,
+        702.75
+      ],
+      "bbox": [
+        1448,
+        669,
+        1620,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S02.jpg"
+    },
+    {
+      "id": "S03",
+      "area": "scrap",
+      "position": 3,
+      "row": 3,
+      "column_from_right": 1,
+      "center": [
+        1473.0,
+        775.5
+      ],
+      "bbox": [
+        1445,
+        742,
+        1616,
+        872
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S03.jpg"
+    },
+    {
+      "id": "S04",
+      "area": "scrap",
+      "position": 4,
+      "row": 4,
+      "column_from_right": 1,
+      "center": [
+        1469.5,
+        848.25
+      ],
+      "bbox": [
+        1442,
+        814,
+        1612,
+        944
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S04.jpg"
+    },
+    {
+      "id": "S05",
+      "area": "scrap",
+      "position": 5,
+      "row": 5,
+      "column_from_right": 1,
+      "center": [
+        1466.0,
+        921.0
+      ],
+      "bbox": [
+        1438,
+        887,
+        1609,
+        1017
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S05.jpg"
+    },
+    {
+      "id": "S06",
+      "area": "scrap",
+      "position": 6,
+      "row": 1,
+      "column_from_right": 2,
+      "center": [
+        1419.0,
+        629.6
+      ],
+      "bbox": [
+        1391,
+        596,
+        1562,
+        726
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S06.jpg"
+    },
+    {
+      "id": "S07",
+      "area": "scrap",
+      "position": 7,
+      "row": 2,
+      "column_from_right": 2,
+      "center": [
+        1415.55,
+        702.8
+      ],
+      "bbox": [
+        1388,
+        669,
+        1559,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S07.jpg"
+    },
+    {
+      "id": "S08",
+      "area": "scrap",
+      "position": 8,
+      "row": 3,
+      "column_from_right": 2,
+      "center": [
+        1412.1,
+        776.0
+      ],
+      "bbox": [
+        1384,
+        742,
+        1555,
+        872
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S08.jpg"
+    },
+    {
+      "id": "S09",
+      "area": "scrap",
+      "position": 9,
+      "row": 4,
+      "column_from_right": 2,
+      "center": [
+        1408.65,
+        849.2
+      ],
+      "bbox": [
+        1381,
+        815,
+        1552,
+        945
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S09.jpg"
+    },
+    {
+      "id": "S10",
+      "area": "scrap",
+      "position": 10,
+      "row": 5,
+      "column_from_right": 2,
+      "center": [
+        1405.2,
+        922.4
+      ],
+      "bbox": [
+        1377,
+        888,
+        1548,
+        1018
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S10.jpg"
+    },
+    {
+      "id": "S11",
+      "area": "scrap",
+      "position": 11,
+      "row": 1,
+      "column_from_right": 3,
+      "center": [
+        1358.0,
+        629.2
+      ],
+      "bbox": [
+        1330,
+        595,
+        1501,
+        725
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S11.jpg"
+    },
+    {
+      "id": "S12",
+      "area": "scrap",
+      "position": 12,
+      "row": 2,
+      "column_from_right": 3,
+      "center": [
+        1354.6,
+        702.85
+      ],
+      "bbox": [
+        1327,
+        669,
+        1498,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S12.jpg"
+    },
+    {
+      "id": "S13",
+      "area": "scrap",
+      "position": 13,
+      "row": 3,
+      "column_from_right": 3,
+      "center": [
+        1351.2,
+        776.5
+      ],
+      "bbox": [
+        1323,
+        742,
+        1494,
+        872
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S13.jpg"
+    },
+    {
+      "id": "S14",
+      "area": "scrap",
+      "position": 14,
+      "row": 4,
+      "column_from_right": 3,
+      "center": [
+        1347.8,
+        850.15
+      ],
+      "bbox": [
+        1320,
+        816,
+        1491,
+        946
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S14.jpg"
+    },
+    {
+      "id": "S15",
+      "area": "scrap",
+      "position": 15,
+      "row": 5,
+      "column_from_right": 3,
+      "center": [
+        1344.4,
+        923.8
+      ],
+      "bbox": [
+        1316,
+        890,
+        1487,
+        1020
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S15.jpg"
+    },
+    {
+      "id": "S16",
+      "area": "scrap",
+      "position": 16,
+      "row": 1,
+      "column_from_right": 4,
+      "center": [
+        1297.0,
+        628.8
+      ],
+      "bbox": [
+        1269,
+        595,
+        1440,
+        725
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S16.jpg"
+    },
+    {
+      "id": "S17",
+      "area": "scrap",
+      "position": 17,
+      "row": 2,
+      "column_from_right": 4,
+      "center": [
+        1293.65,
+        702.9
+      ],
+      "bbox": [
+        1266,
+        669,
+        1437,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S17.jpg"
+    },
+    {
+      "id": "S18",
+      "area": "scrap",
+      "position": 18,
+      "row": 3,
+      "column_from_right": 4,
+      "center": [
+        1290.3,
+        777.0
+      ],
+      "bbox": [
+        1262,
+        743,
+        1433,
+        873
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S18.jpg"
+    },
+    {
+      "id": "S19",
+      "area": "scrap",
+      "position": 19,
+      "row": 4,
+      "column_from_right": 4,
+      "center": [
+        1286.95,
+        851.1
+      ],
+      "bbox": [
+        1259,
+        817,
+        1430,
+        947
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S19.jpg"
+    },
+    {
+      "id": "S20",
+      "area": "scrap",
+      "position": 20,
+      "row": 5,
+      "column_from_right": 4,
+      "center": [
+        1283.6,
+        925.2
+      ],
+      "bbox": [
+        1256,
+        891,
+        1427,
+        1021
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S20.jpg"
+    },
+    {
+      "id": "S21",
+      "area": "scrap",
+      "position": 21,
+      "row": 1,
+      "column_from_right": 5,
+      "center": [
+        1236.0,
+        628.4
+      ],
+      "bbox": [
+        1208,
+        594,
+        1379,
+        724
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S21.jpg"
+    },
+    {
+      "id": "S22",
+      "area": "scrap",
+      "position": 22,
+      "row": 2,
+      "column_from_right": 5,
+      "center": [
+        1232.7,
+        702.95
+      ],
+      "bbox": [
+        1205,
+        669,
+        1376,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S22.jpg"
+    },
+    {
+      "id": "S23",
+      "area": "scrap",
+      "position": 23,
+      "row": 3,
+      "column_from_right": 5,
+      "center": [
+        1229.4,
+        777.5
+      ],
+      "bbox": [
+        1201,
+        744,
+        1372,
+        874
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S23.jpg"
+    },
+    {
+      "id": "S24",
+      "area": "scrap",
+      "position": 24,
+      "row": 4,
+      "column_from_right": 5,
+      "center": [
+        1226.1,
+        852.05
+      ],
+      "bbox": [
+        1198,
+        818,
+        1369,
+        948
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S24.jpg"
+    },
+    {
+      "id": "S25",
+      "area": "scrap",
+      "position": 25,
+      "row": 5,
+      "column_from_right": 5,
+      "center": [
+        1222.8,
+        926.6
+      ],
+      "bbox": [
+        1195,
+        893,
+        1366,
+        1023
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S25.jpg"
+    },
+    {
+      "id": "S26",
+      "area": "scrap",
+      "position": 26,
+      "row": 1,
+      "column_from_right": 6,
+      "center": [
+        1175.0,
+        628.0
+      ],
+      "bbox": [
+        1147,
+        594,
+        1318,
+        724
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S26.jpg"
+    },
+    {
+      "id": "S27",
+      "area": "scrap",
+      "position": 27,
+      "row": 2,
+      "column_from_right": 6,
+      "center": [
+        1171.75,
+        703.0
+      ],
+      "bbox": [
+        1144,
+        669,
+        1315,
+        799
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S27.jpg"
+    },
+    {
+      "id": "S28",
+      "area": "scrap",
+      "position": 28,
+      "row": 3,
+      "column_from_right": 6,
+      "center": [
+        1168.5,
+        778.0
+      ],
+      "bbox": [
+        1140,
+        744,
+        1312,
+        874
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S28.jpg"
+    },
+    {
+      "id": "S29",
+      "area": "scrap",
+      "position": 29,
+      "row": 4,
+      "column_from_right": 6,
+      "center": [
+        1165.25,
+        853.0
+      ],
+      "bbox": [
+        1137,
+        819,
+        1308,
+        949
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S29.jpg"
+    },
+    {
+      "id": "S30",
+      "area": "scrap",
+      "position": 30,
+      "row": 5,
+      "column_from_right": 6,
+      "center": [
+        1162.0,
+        928.0
+      ],
+      "bbox": [
+        1134,
+        894,
+        1305,
+        1024
+      ],
+      "class": null,
+      "presence": null,
+      "review_status": "draft",
+      "reason": "",
+      "reference_match": null,
+      "suggested_class": null,
+      "crop_path": "tray_000001/crops/S30.jpg"
+    }
+  ],
+  "groups": {
+    "good": {
+      "occupied": 0,
+      "unknown_occupancy": 30,
+      "capacity": 30,
+      "last_observed_occupied_position": 0,
+      "expected_through": null,
+      "fill_boundary": 0,
+      "boundary_source": "visible_occupancy_lower_bound",
+      "missing_positions": [],
+      "not_yet_filled_positions": [],
+      "unknown_positions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "visible_defect_positions": [],
+      "full": null,
+      "needs_review": true,
+      "in_progress": false,
+      "findings": {
+        "complete_order": null,
+        "missing_vial": false,
+        "bad_misclassified_as_good": null
+      },
+      "positive_labels": []
+    },
+    "scrap": {
+      "occupied": 0,
+      "unknown_occupancy": 30,
+      "capacity": 30,
+      "last_observed_occupied_position": 0,
+      "expected_through": null,
+      "fill_boundary": 0,
+      "boundary_source": "visible_occupancy_lower_bound",
+      "missing_positions": [],
+      "not_yet_filled_positions": [],
+      "unknown_positions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "visible_defect_positions": [],
+      "full": null,
+      "needs_review": true,
+      "visually_passing_scrap_positions": [],
+      "suspected_misroute_positions": [],
+      "upstream_confirmed_misroute_positions": [],
+      "upstream_unverified_positions": [],
+      "visible_pattern_ok": false,
+      "findings": {
+        "no_problems": null,
+        "missing_vial": false,
+        "good_misclassified_as_bad": null,
+        "full": null
+      },
+      "positive_labels": []
+    }
+  }
+}

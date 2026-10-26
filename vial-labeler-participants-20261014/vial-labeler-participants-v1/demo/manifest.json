@@ -1,0 +1,11 @@
+{
+  "version": "participant-1.0",
+  "mode": "manual",
+  "created_at": "2026-10-14T12:53:41.614338+00:00",
+  "images": [
+    {
+      "filename": "tray_000001.jpg",
+      "source_sha256": "df0edcffe19d5152c18d50ede9aacdbaa5357e3dc14b9717072951a6522e6b19"
+    }
+  ]
+}
