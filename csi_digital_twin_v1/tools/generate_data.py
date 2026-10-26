@@ -3,8 +3,8 @@
     <isaac-sim>/python.sh tools/generate_data.py --count 20 --out /workspace/dataset_test --subframes 8
     <isaac-sim>/python.sh tools/generate_data.py --count 300 --out /workspace/dataset
 
-For every image, each of the 30 positions is randomly set to one of: pass, missing_cap, crooked_cap, no_vial.
-(damaged_vial and the scrap fixture are not generated yet.) Output folder:
+For every image, each of the 30 positions is randomly set to one of: pass, missing_cap, crooked_cap, damaged_vial, no_vial.
+(damaged_vial is an approximation: a crushed, tilted body. The scrap fixture is not generated yet.) Output folder:
 
     images/img_0000.png            full 640x480 image, same look as the real camera
     annotated/img_0000.png         the same image with each position's box and class drawn on it
@@ -25,7 +25,7 @@ ap.add_argument("--out", default="dataset", help="output folder")
 ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--subframes", type=int, default=32, help="path-tracing quality; use 8 for a quick test")
 ap.add_argument("--defect-rate", type=float, default=0.4,
-                help="fraction of positions that get a defect, split equally between the 3 defect classes")
+                help="fraction of positions that get a defect, split equally between the 4 defect classes")
 ap.add_argument("--crop", type=int, default=40, help="crop size in pixels of the final 640x480 image")
 ap.add_argument("--stage", default=os.path.join(HERE, "csi_line.usda"),
                 help="csi_line.usda (full plant, matches the real camera view) or a single station file")
@@ -94,9 +94,11 @@ try:
     da = td.DefectApplier(stage, root=root)
     centers = da.pixel_centers(cam)
     rng = random.Random(a.seed)
-    per_defect = a.defect_rate / 3
-    weights = {"pass": 1 - a.defect_rate, "missing_cap": per_defect, "crooked_cap": per_defect, "no_vial": per_defect}
-    colors = {"pass": (0, 200, 0), "missing_cap": (0, 165, 255), "crooked_cap": (255, 0, 160), "no_vial": (255, 120, 0)}
+    per_defect = a.defect_rate / 4
+    weights = {"pass": 1 - a.defect_rate, "missing_cap": per_defect, "crooked_cap": per_defect, "damaged_vial": per_defect,
+               "no_vial": per_defect}
+    colors = {"pass": (0, 200, 0), "missing_cap": (0, 165, 255), "crooked_cap": (255, 0, 160),
+              "damaged_vial": (0, 0, 255), "no_vial": (255, 120, 0)}
     half = a.crop // 2
 
     rows, t0 = [], time.time()
