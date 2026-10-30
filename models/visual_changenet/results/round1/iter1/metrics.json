@@ -1,0 +1,121 @@
+{
+  "threshold_rule": "midpoint of the val gap between good vials and defects",
+  "threshold": 0.5273085115,
+  "val": {
+    "threshold": 0.5273085115,
+    "per_class_false_negatives": {
+      "crooked_cap": {
+        "total": 154,
+        "missed": 0,
+        "fn_rate": 0.0
+      },
+      "missing_cap": {
+        "total": 179,
+        "missed": 0,
+        "fn_rate": 0.0
+      },
+      "no_vial": {
+        "total": 359,
+        "missed": 0,
+        "fn_rate": 0.0
+      }
+    },
+    "missed_defects": 0,
+    "defects": 692,
+    "recall": 1.0,
+    "false_alarms": 0,
+    "passes": 508,
+    "false_alarm_rate": 0.0,
+    "auroc": 1.0
+  },
+  "val_stress": {
+    "at_val_threshold": {
+      "threshold": 0.5273085115,
+      "per_class_false_negatives": {
+        "crooked_cap": {
+          "total": 154,
+          "missed": 1,
+          "fn_rate": 0.006493506493506494
+        },
+        "missing_cap": {
+          "total": 179,
+          "missed": 0,
+          "fn_rate": 0.0
+        },
+        "no_vial": {
+          "total": 359,
+          "missed": 0,
+          "fn_rate": 0.0
+        }
+      },
+      "missed_defects": 1,
+      "defects": 692,
+      "recall": 0.9985549132947977,
+      "false_alarms": 27,
+      "passes": 508,
+      "false_alarm_rate": 0.0531496062992126
+    },
+    "auroc": 0.9998122525146784,
+    "far_at_catch_all": 0.08070866141732283
+  },
+  "test": {
+    "at_val_threshold": {
+      "threshold": 0.5273085115,
+      "per_class_false_negatives": {
+        "crooked_cap": {
+          "total": 212,
+          "missed": 0,
+          "fn_rate": 0.0
+        },
+        "missing_cap": {
+          "total": 195,
+          "missed": 0,
+          "fn_rate": 0.0
+        },
+        "no_vial": {
+          "total": 512,
+          "missed": 0,
+          "fn_rate": 0.0
+        }
+      },
+      "missed_defects": 0,
+      "defects": 919,
+      "recall": 1.0,
+      "false_alarms": 0,
+      "passes": 581,
+      "false_alarm_rate": 0.0
+    },
+    "auroc": 1.0,
+    "scene_view": {
+      "scenes": 50,
+      "scenes_with_a_missed_defect": 0,
+      "scenes_fully_correct": 50
+    },
+    "brief_metric_far_at_catch_all_test_threshold": {
+      "threshold": 0.9759606,
+      "per_class_false_negatives": {
+        "crooked_cap": {
+          "total": 212,
+          "missed": 0,
+          "fn_rate": 0.0
+        },
+        "missing_cap": {
+          "total": 195,
+          "missed": 0,
+          "fn_rate": 0.0
+        },
+        "no_vial": {
+          "total": 512,
+          "missed": 0,
+          "fn_rate": 0.0
+        }
+      },
+      "missed_defects": 0,
+      "defects": 919,
+      "recall": 1.0,
+      "false_alarms": 0,
+      "passes": 581,
+      "false_alarm_rate": 0.0
+    }
+  }
+}

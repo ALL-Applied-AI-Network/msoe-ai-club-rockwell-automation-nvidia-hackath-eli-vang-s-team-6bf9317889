@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vial Inspection Review</title>
+<style>
+  :root {
+    --bg: #0f1216; --panel: #171b21; --panel2: #1e232b; --line: #2a313b; --text: #e6e9ee; --muted: #8b95a3;
+    --pass: #2fbf71; --nopass: #ef4b4b; --review: #f2a93b; --disagree: #b07cff; --accent: #4aa3ff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display: flex; gap: 16px; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+  header h1 { font-size: 16px; margin: 0; font-weight: 600; }
+  header .run { color: var(--muted); }
+  .chips { display: flex; gap: 8px; flex-wrap: wrap; }
+  .chip { padding: 2px 9px; border-radius: 99px; background: var(--panel2); font-size: 12px; }
+  .chip b { font-weight: 600; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+  header .spacer { flex: 1; }
+  input, select, textarea, button { font: inherit; color: var(--text); background: var(--panel2); border: 1px solid var(--line); border-radius: 6px; padding: 5px 8px; }
+  main { display: grid; grid-template-columns: 220px 1fr 340px; height: calc(100vh - 53px); }
+  #scenes { border-right: 1px solid var(--line); overflow: auto; }
+  .scene { padding: 8px 12px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  .scene:hover { background: var(--panel); }
+  .scene.sel { background: var(--panel2); box-shadow: inset 3px 0 var(--accent); }
+  .scene .name { font-weight: 600; }
+  .scene .counts { font-size: 12px; color: var(--muted); display: flex; gap: 8px; margin-top: 2px; }
+  #view { overflow: auto; padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  #stage { align-self: center; width: 100%; max-width: 1000px; }
+  #stage svg { display: block; width: 100%; height: auto; max-height: calc(100vh - 170px); border-radius: 6px; background: #000; }
+  .box { fill: transparent; stroke-width: 1.3; cursor: pointer; }
+  .box.sel { stroke-width: 3; stroke: #fff !important; }
+  .pos-label { font-size: 7px; fill: #fff; paint-order: stroke; stroke: #000; stroke-width: 2px; pointer-events: none; }
+  .legend { display: flex; gap: 14px; color: var(--muted); font-size: 12px; justify-content: center; flex-wrap: wrap; }
+  .alert { background: #3a1d1d; border: 1px solid #6b2a2a; padding: 6px 10px; border-radius: 6px; }
+  aside { border-left: 1px solid var(--line); overflow: auto; padding: 14px; display: flex; flex-direction: column; gap: 12px; }
+  aside h2 { margin: 0; font-size: 18px; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .pair figure { margin: 0; }
+  .pair img { width: 100%; image-rendering: pixelated; border-radius: 6px; border: 1px solid var(--line); }
+  .pair figcaption { font-size: 12px; color: var(--muted); text-align: center; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 12px; text-transform: uppercase; color: #111; }
+  .kv { display: grid; grid-template-columns: 110px 1fr; gap: 3px 8px; font-size: 13px; }
+  .kv > span:nth-child(odd) { color: var(--muted); }
+  .scale { position: relative; height: 10px; border-radius: 5px; background: linear-gradient(90deg, var(--pass) 0 10%, var(--review) 10% 23.27%, var(--nopass) 23.27% 100%); }
+  .scale .mark { position: absolute; top: -4px; width: 3px; height: 18px; background: #fff; border-radius: 2px; transform: translateX(-1px); }
+  .btns { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .btns button { padding: 8px; cursor: pointer; text-align: left; }
+  .btns button:hover { border-color: var(--accent); }
+  .btns button.good { grid-column: 1 / -1; border-color: var(--pass); }
+  .btns button.on { background: var(--accent); color: #fff; border-color: var(--accent); }
+  kbd { font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: 0 4px; float: right; }
+  .flagged { font-size: 12px; padding: 6px 8px; border-radius: 6px; background: var(--panel2); }
+  .nav { display: flex; gap: 6px; align-items: center; }
+  .nav button { cursor: pointer; }
+  .muted { color: var(--muted); font-size: 12px; }
+  @media (max-width: 1000px) { main { grid-template-columns: 1fr; height: auto; } #scenes { max-height: 180px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vial Inspection Review</h1><span class="run" id="run"></span>
+  <div class="chips" id="chips"></div>
+  <div class="spacer"></div>
+  <label class="muted">Show <select id="filter">
+    <option value="attention">Needs a look (review, disagreement, no pass)</option>
+    <option value="review">Review only</option>
+    <option value="disagree">Disagreements</option>
+    <option value="no_pass">No pass</option>
+    <option value="pass">Pass (hunt for misses)</option>
+    <option value="unflagged">Not yet checked</option>
+    <option value="all">All positions</option>
+  </select></label>
+  <input id="operator" placeholder="Operator name" size="14">
+</header>
+<main>
+  <div id="scenes"></div>
+  <div id="view">
+    <div id="alerts"></div>
+    <div id="stage"><svg id="overlay" preserveAspectRatio="xMidYMid meet"></svg></div>
+    <div class="legend">
+      <span><i class="dot" style="background:var(--pass)"></i>pass</span>
+      <span><i class="dot" style="background:var(--review)"></i>review</span>
+      <span><i class="dot" style="background:var(--nopass)"></i>no pass</span>
+      <span><i class="dot" style="background:var(--disagree)"></i>models disagree (dashed)</span>
+      <span>✓ operator checked</span>
+      <label><input type="checkbox" id="full"> full scene</label>
+    </div>
+  </div>
+  <aside id="detail"><p class="muted">Pick a position on the scene.</p></aside>
+</main>
+<script>
+const COLORS = { pass: "var(--pass)", no_pass: "var(--nopass)", review: "var(--review)" };
+const LABELS = { pass: "Good vial", missing_cap: "Missing cap", crooked_cap: "Crooked cap", no_vial: "No vial", damaged_vial: "Damaged vial" };
+const KEYS = { g: "pass", 1: "missing_cap", 2: "crooked_cap", 3: "no_vial", 4: "damaged_vial" };
+let D, flags = new Map(), scene = null, sel = null;
+const key = r => r.scene + "|" + r.position;
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+try { $("operator").value = localStorage.getItem("operator") || ""; } catch (e) {}
+$("operator").onchange = e => { try { localStorage.setItem("operator", e.target.value); } catch (err) {} };
+$("full").onchange = () => renderScene();
+$("filter").onchange = () => { renderScenes(); const l = queue(); if (l.length) pick(l[0]); };
+
+function matches(r) {
+  const f = $("filter").value, dis = r.disagreement === "1";
+  return f === "all" || (f === "attention" && (r.decision !== "pass" || dis)) || (f === "review" && r.decision === "review") ||
+    (f === "disagree" && dis) || (f === r.decision) || (f === "unflagged" && !flags.has(key(r)));
+}
+const queue = () => D.rows.filter(matches);
+
+async function load() {
+  D = await (await fetch("/api/run")).json();
+  D.flags.forEach(f => flags.set(key(f), f));
+  $("run").textContent = D.run;
+  renderChips(); renderScenes();
+  const first = queue()[0] || D.rows[0];
+  if (first) pick(first);
+}
+
+function renderChips() {
+  const s = D.summary, c = s.decisions;
+  const types = {}; flags.forEach(f => types[f.flag_type] = (types[f.flag_type] || 0) + 1);
+  let h = `<span class="chip"><i class="dot" style="background:var(--pass)"></i><b>${c.pass || 0}</b> pass</span>` +
+    `<span class="chip"><i class="dot" style="background:var(--review)"></i><b>${c.review || 0}</b> review</span>` +
+    `<span class="chip"><i class="dot" style="background:var(--nopass)"></i><b>${c.no_pass || 0}</b> no pass</span>` +
+    `<span class="chip"><i class="dot" style="background:var(--disagree)"></i><b>${s.disagreements}</b> disagree</span>` +
+    `<span class="chip">✓ <b>${flags.size}</b> checked</span>`;
+  if (types.missed_defect) h += `<span class="chip" style="background:#5a1f1f"><b>${types.missed_defect}</b> missed defects</span>`;
+  if (types.false_alarm) h += `<span class="chip"><b>${types.false_alarm}</b> false alarms</span>`;
+  $("chips").innerHTML = h;
+}
+
+function renderScenes() {
+  $("scenes").innerHTML = D.scenes.map(s => {
+    const rows = D.rows.filter(r => r.scene === s.scene), q = rows.filter(matches).length;
+    const done = rows.filter(r => flags.has(key(r))).length, c = s.counts;
+    return `<div class="scene ${scene === s.scene ? "sel" : ""}" data-s="${esc(s.scene)}">
+      <div class="name">${esc(s.scene)} ${s.missed_placements.length ? "⚠" : ""}</div>
+      <div class="counts"><span style="color:var(--pass)">${c.pass || 0}</span><span style="color:var(--review)">${c.review || 0}</span>
+      <span style="color:var(--nopass)">${c.no_pass || 0}</span><span>${q} to look at</span><span>✓${done}</span></div></div>`;
+  }).join("");
+  document.querySelectorAll(".scene").forEach(el => el.onclick = () => {
+    const rows = D.rows.filter(r => r.scene === el.dataset.s);
+    pick(rows.find(matches) || rows[0]);
+  });
+}
+
+function renderScene() {
+  const s = D.scenes.find(x => x.scene === scene);
+  const svg = $("overlay"), size = D.config.crop_size, rows = D.rows.filter(r => r.scene === scene);
+  // zoom to the fixture (all positions plus a margin) unless "full scene" is ticked
+  const xs = rows.map(r => +r.cx), ys = rows.map(r => +r.cy), pad = size * 1.2;
+  const vb = $("full").checked ? [0, 0, s.width, s.height]
+    : [Math.min(...xs) - pad, Math.min(...ys) - pad, Math.max(...xs) - Math.min(...xs) + 2 * pad, Math.max(...ys) - Math.min(...ys) + 2 * pad];
+  svg.setAttribute("viewBox", vb.join(" "));
+  svg.innerHTML = `<image href="/files/${esc(s.image)}" x="0" y="0" width="${s.width}" height="${s.height}"></image>` + rows.map(r => {
+    const b = size - 6, x = r.cx - b / 2, y = r.cy - b / 2, f = flags.get(key(r));  // inset: crops overlap neighbours
+    const dash = r.disagreement === "1" ? `stroke-dasharray="4 2"` : "";
+    const col = r.disagreement === "1" ? "var(--disagree)" : COLORS[r.decision];
+    const dim = matches(r) ? 1 : 0.35;
+    return `<rect class="box ${sel && key(sel) === key(r) ? "sel" : ""}" data-p="${esc(r.position)}" x="${x}" y="${y}" width="${b}" height="${b}" rx="3" stroke="${col}" ${dash} opacity="${dim}"></rect>
+      <text class="pos-label" x="${x + 2}" y="${y + 8}">${esc(r.position.replace(/^\D+/, ""))}${f ? " ✓" : ""}</text>`;
+  }).join("");
+  svg.querySelectorAll(".box").forEach(el => el.onclick = () => pick(D.rows.find(r => r.scene === scene && r.position === el.dataset.p)));
+  $("alerts").innerHTML = s.missed_placements.length
+    ? `<div class="alert">Possible missed placement (empty before a filled position): ${s.missed_placements.join(", ")}</div>` : "";
+}
+
+function pick(r) {
+  if (!r) return;
+  sel = r;
+  if (scene !== r.scene) { scene = r.scene; renderScenes(); }
+  renderScene(); renderDetail();
+}
+
+function renderDetail() {
+  const r = sel, f = flags.get(key(r)), score = +r.score, q = queue(), i = q.findIndex(x => key(x) === key(r));
+  const cut = D.config.no_pass_cutoff, rev = D.config.review_from;
+  const badge = d => `<span class="badge" style="background:${COLORS[d]}">${d.replace("_", " ")}</span>`;
+  $("detail").innerHTML = `
+    <div class="nav"><button id="prev">← Prev</button><span class="muted">${i >= 0 ? i + 1 : "–"} of ${q.length} in view</span><button id="next">Next →</button></div>
+    <h2>${esc(r.scene)} · ${esc(r.position)} ${badge(r.decision)}</h2>
+    <div class="pair">
+      <figure><img src="/files/${esc(r.crop)}" alt="crop"><figcaption>This position</figcaption></figure>
+      <figure><img src="/files/${esc(r.golden)}" alt="golden"><figcaption>Golden reference</figcaption></figure>
+    </div>
+    <div><div class="muted" style="margin-bottom:6px">ChangeNet score ${score.toFixed(4)} (review from ${rev}, no pass from ${cut})</div>
+      <div class="scale" style="background:linear-gradient(90deg,var(--pass) 0 ${rev * 100}%,var(--review) ${rev * 100}% ${cut * 100}%,var(--nopass) ${cut * 100}% 100%)">
+      <div class="mark" style="left:${Math.min(score, 1) * 100}%"></div></div></div>
+    <div class="kv">
+      <span>Model call</span><span>${badge(r.model_call)}</span>
+      <span>Second opinion</span><span>${r.second_label ? esc(r.second_label) + (r.second_confidence ? ` (${esc(r.second_confidence)})` : "") : "<span class=muted>none</span>"}</span>
+      ${r.second_reason ? `<span>Its reason</span><span>${esc(r.second_reason)}</span>` : ""}
+      <span>Why</span><span>${esc(r.reasons) || "score below review band"}</span>
+      <span>Fixture state</span><span>${esc(r.state)}</span>
+      ${r.true_class ? `<span>Dataset label</span><span>${esc(r.true_class)}</span>` : ""}
+    </div>
+    <div><div class="muted" style="margin-bottom:6px">What is really in this position?</div>
+    <div class="btns">${D.classes.map(c => `<button class="${c === "pass" ? "good" : ""} ${f && f.operator_label === c ? "on" : ""}" data-l="${c}">
+      ${LABELS[c] || c}<kbd>${Object.keys(KEYS).find(k => KEYS[k] === c)}</kbd></button>`).join("")}</div></div>
+    <textarea id="note" rows="2" placeholder="Note (optional): lighting, glare, fixture moved…">${esc(f ? f.note : "")}</textarea>
+    ${f ? `<div class="flagged">Logged <b>${esc(f.flag_type.replace("_", " "))}</b> as ${esc(LABELS[f.operator_label])} by ${esc(f.operator || "unknown")} · ${esc(f.time)}</div>` : ""}
+    <div class="muted">Keys: G good · 1–4 defect · ←/→ move. Every answer is saved to flags.csv for retraining.</div>`;
+  $("prev").onclick = () => step(-1); $("next").onclick = () => step(1);
+  document.querySelectorAll(".btns button").forEach(b => b.onclick = () => save(b.dataset.l));
+}
+
+function step(d) {
+  const q = queue(); if (!q.length) return;
+  const i = q.findIndex(x => key(x) === key(sel));
+  pick(q[i < 0 ? 0 : (i + d + q.length) % q.length]);
+}
+
+async function save(label) {
+  const res = await fetch("/api/flag", { method: "POST", headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ scene: sel.scene, position: sel.position, label, note: $("note").value, operator: $("operator").value }) });
+  if (!res.ok) { alert("Could not save: " + (await res.text())); return; }
+  const f = await res.json(); flags.set(key(f), f);
+  renderChips(); renderScenes();
+  const q = queue(), i = q.findIndex(x => key(x) === key(sel));
+  if ($("filter").value === "unflagged" || i < 0) { const n = queue()[0]; n ? pick(n) : renderDetail(); }
+  else step(1);
+}
+
+document.addEventListener("keydown", e => {
+  if (!D || /INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) return;
+  if (e.key === "ArrowRight" || e.key === "j") step(1);
+  else if (e.key === "ArrowLeft" || e.key === "k") step(-1);
+  else if (KEYS[e.key.toLowerCase()]) save(KEYS[e.key.toLowerCase()]);
+});
+load();
+</script>
+</body>
+</html>

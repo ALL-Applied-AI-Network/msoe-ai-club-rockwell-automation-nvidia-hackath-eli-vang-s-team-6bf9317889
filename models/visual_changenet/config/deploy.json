@@ -1,0 +1,16 @@
+{
+  "version": "vcn-iter1-v1",
+  "model": "iter1",
+  "checkpoint": "checkpoints/iter1.pth",
+  "spec": "specs/iter1_train.yaml",
+  "no_pass_cutoff": 0.2327,
+  "review_from": 0.1,
+  "crop_size": 40,
+  "fixture_map": "config/fixture_G.csv",
+  "golden_dir": "config/golden",
+  "notes": {
+    "no_pass_cutoff": "score >= this is NO_PASS. Lowest stressed-val defect score for iter1 (results/round1/summary.md), set without test.",
+    "review_from": "score in [review_from, no_pass_cutoff) goes to REVIEW: about 2x the highest clean-val good-vial score (0.055), a buffer for real-camera shift. Set on val only.",
+    "fixture_map": "golden-fixture position centres; each scene is shifted onto it by phase correlation against config/golden/scene.png (max 1 px error on the 50 test scenes)"
+  }
+}

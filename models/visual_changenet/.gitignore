@@ -1,0 +1,13 @@
+data/
+results/*/train/
+results/*/inference_*/
+results/*/logs/
+pretrained_models/
+third_party/
+*.pth
+*.safetensors
+*.onnx
+.env
+runs/
+deft/
+checkpoints/

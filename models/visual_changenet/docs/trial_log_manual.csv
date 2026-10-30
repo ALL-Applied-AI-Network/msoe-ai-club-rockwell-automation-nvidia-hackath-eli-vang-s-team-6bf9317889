@@ -1,0 +1,2 @@
+trial_id,date_time,software_version,model,input_condition,image_or_run,position,prediction,expected,correct,latency_s,operator_intervention,notes
+1,,vcn-iter1-v1,iter1 cutoff 0.2327,,,,,,,,,
